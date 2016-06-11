@@ -1,0 +1,38 @@
+{
+  "name": "1qiubaiqiu",
+  "version": "1.0.0",
+  "description": "一糗百糗的h5项目",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiyou666666/1qiubaiqiu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aiyou666666/1qiubaiqiu/issues"
+  },
+  "homepage": "https://github.com/aiyou666666/1qiubaiqiu#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rev": "^6.0.0",
+    "gulp-rev-collector": "^1.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-copy": "^0.0.2",
+    "gulp-replace": "^0.5.4"
+  },
+  "engines": {
+    "node": ">= 0.9"
+  },
+  "devDependencies": {
+    "gulp-filter": "^3.0.1",
+    "gulp-html-minifier": "^0.1.6",
+    "gulp-minify-html": "^1.0.4"
+  }
+}

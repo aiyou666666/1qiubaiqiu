@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload');
-    spritesmith = require('gulp.spritesmith');
+   spritesmith=require("gulp.spritesmith");
  
 // 样式
 gulp.task('css', function() { 
@@ -23,7 +23,7 @@ gulp.task('css', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(gulp.dest('release/css'))
-    .pipe(notify({ message: '详细压缩完成' }));
+    .pipe(notify({ message: '样式压缩完成' }));
 });
  
 // 脚本
@@ -58,8 +58,10 @@ gulp.task('spriteIcon', function () {
         imgName: 'icon.png',
         cssName: 'g_icon.css'
     }));
-    spriteData.img.pipe(gulp.dest('src/img/'));
-    spriteData.css.pipe(gulp.dest('src/scss/'));
+    console.log("=======");
+    console.log(spriteData);
+    spriteData.pipe(gulp.dest('src/img/'));
+    spriteData.pipe(gulp.dest('src/css/'));
 });
  
 // 预设任务

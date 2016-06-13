@@ -63,23 +63,35 @@ gulp.task('spriteIcon', function () {
     spriteData.pipe(gulp.dest('src/img/'));
     spriteData.pipe(gulp.dest('src/css/'));
 });
+
+gulp.task("scss",function(){
+	return gulp.src('src/scss/*.scss')
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest('src/css'))
+    .pipe(notify({ message: '样式修改' }));
+    
+});
  
 // 预设任务
 gulp.task('default', ['clean'], function() { 
     gulp.start('css', 'js', 'img');
 });
+gulp.task("watchScss",function(){
+ 	 //看守.scss
+ 	 gulp.watch("src/scss/*.scss",['scss']);
+ });
  
 // 看守
 gulp.task('watch', function() {
  
   // 看守所有.scss档
-  gulp.watch('src/styles/**/*.scss', ['styles']);
+  gulp.watch('src/styles/**/*.scss', ['css']);
  
   // 看守所有.js档
-  gulp.watch('src/scripts/**/*.js', ['scripts']);
+  gulp.watch('src/scripts/**/*.js', ['js']);
  
   // 看守所有图片档
-  gulp.watch('src/images/**/*', ['images']);
+  gulp.watch('src/images/**/*', ['img']);
  
   // 建立即时重整伺服器
   var server = livereload();
@@ -88,5 +100,6 @@ gulp.task('watch', function() {
   gulp.watch(['release/**']).on('change', function(file) {
     server.changed(file.path);
   });
+ 
  
 });

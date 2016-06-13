@@ -22,7 +22,9 @@
             text: 'src/js/text',//用于requirejs导入html类型的依赖
             handlebars:'src/js/handlebars',
             stylePath: project + '/css',
-            modulesPath:project+"src/modules/"
+            modulesPath:project+"src/modules/",
+            utils:project+"src/js/common/utils",
+            validate:project+"src/js/common/validate"
         },
         shim: {                     //引入没有使用requirejs模块写法的类库。backbone依赖underscore
             'underscore': {

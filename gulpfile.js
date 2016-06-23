@@ -1,6 +1,6 @@
 //载入插件
 var gulp = require('gulp'), 
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
@@ -58,17 +58,16 @@ gulp.task('spriteIcon', function () {
         imgName: 'icon.png',
         cssName: 'g_icon.css'
     }));
-    console.log("=======");
-    console.log(spriteData);
     spriteData.pipe(gulp.dest('src/img/'));
     spriteData.pipe(gulp.dest('src/css/'));
 });
 
 gulp.task("scss",function(){
-	return gulp.src('src/scss/*.scss')
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('src/css'))
-    .pipe(notify({ message: '样式修改' }));
+	return  sass('src/scss/comm.scss')
+        .on('error', function (err) {
+            console.error('Error!', err.message);
+        })
+        .pipe(gulp.dest('src/css'));
     
 });
  

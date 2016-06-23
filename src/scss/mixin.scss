@@ -1,0 +1,98 @@
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+    html {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 376px) and (max-width: 450px) {
+    html {
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 451px) and (max-width: 525px) {
+    html {
+        font-size: 28px;
+    }
+}
+@media only screen and (min-width: 526px) and (max-width: 600px) {
+    html {
+        font-size: 32px;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 675px) {
+    html {
+        font-size: 36px;
+    }
+}
+
+$w: 750;
+
+@mixin height($height) {
+  height: 1rem * $height * 375 / $w / 10;
+}
+
+@mixin width($width) {
+  width: 1rem * $width * 375 / $w / 10;
+}
+
+@mixin font-size($font-size) {
+  font-size: 1rem * $font-size * 375 / $w / 10;
+}
+
+@mixin line-height($line-height) {
+  line-height: 1rem * $line-height * 375 / $w / 10;
+}
+
+@mixin border-radius($border-radius) {
+  border-radius: 1rem * $border-radius * 375 / $w / 10;
+}
+
+@mixin padding-top($top) {
+  padding-top: 1rem * $top * 375 / $w / 10;
+}
+
+@mixin padding-right($right) {
+  padding-right: 1rem * $right * 375 / $w / 10;
+}
+
+@mixin padding-bottom($bottom) {
+  padding-bottom: 1rem * $bottom * 375 / $w / 10;
+}
+
+@mixin padding-left($left) {
+  padding-left: 1rem * $left * 375 / $w / 10;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  @include padding-top($top);
+  @include padding-right($right);
+  @include padding-bottom($bottom);
+  @include padding-left($left);
+}
+
+@mixin margin-top($top) {
+  margin-top: 1rem * $top * 375 / $w / 10;
+}
+
+@mixin margin-right($right) {
+  margin-right: 1rem * $right * 375 / $w / 10;
+}
+
+@mixin margin-bottom($bottom) {
+  margin-bottom: 1rem * $bottom * 375 / $w / 10;
+}
+
+@mixin margin-left($left) {
+  margin-left: 1rem * $left * 375 / $w / 10;  
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  @include margin-top($top);
+  @include margin-right($right);
+  @include margin-bottom($bottom);
+  @include margin-left($left);
+}

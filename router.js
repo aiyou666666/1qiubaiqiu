@@ -4,8 +4,8 @@
 define(['backbone'], function () {
 
     var routesMap = {
-        'index': 'src/modules/index/controller.js',            //原来应该是一个方法名，这里取巧改为模块路径
-        'detail(/:name)': 'src/modules/controller.js',
+        'index': 'src/modules/index/controller.js',   //原来应该是一个方法名，这里取巧改为模块路径
+        'detail(/:name)': 'src/modules/detail/controller.js',
         'list':'src/modules/list/controller.js',
         '*actions': 'defaultAction'
     };

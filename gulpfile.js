@@ -16,7 +16,7 @@ var gulp = require('gulp'),
  
 // 样式
 gulp.task('css', function() { 
-  return gulp.src('src/scss/main.scss')
+  return gulp.src('src/scss/*.scss')
     .pipe(sass({ style: 'expanded', }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('release/css'))
@@ -29,8 +29,8 @@ gulp.task('css', function() {
 // 脚本
 gulp.task('js', function() { 
   return gulp.src('src/js/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
+    /*.pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('default'))*/
     .pipe(concat('main.js'))
     .pipe(gulp.dest('release/js'))
     .pipe(rename({ suffix: '.min' }))
@@ -58,26 +58,29 @@ gulp.task('spriteIcon', function () {
         imgName: 'icon.png',
         cssName: 'g_icon.css'
     }));
-    spriteData.pipe(gulp.dest('src/img/'));
-    spriteData.pipe(gulp.dest('src/css/'));
+    spriteData.pipe(gulp.dest('src/img'));
+    spriteData.pipe(gulp.dest('src/css'));
 });
 
 gulp.task("scss",function(){
-	return  sass('src/scss/comm.scss')
-        .on('error', function (err) {
-            console.error('Error!', err.message);
-        })
-        .pipe(gulp.dest('src/css'));
+	 return gulp.src('src/modules/**/*.scss')
+    .pipe(sass({ style: 'expanded', }))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest('src/modules/'))
+    .pipe(notify({ message: '解析scss' }));
+    
     
 });
  
 // 预设任务
-gulp.task('default', ['clean'], function() { 
+gulp.task('bulid', ['clean'], function() { 
     gulp.start('css', 'js', 'img');
 });
 gulp.task("watchScss",function(){
  	 //看守.scss
+ 	 console.log("看守scss");
  	 gulp.watch("src/scss/*.scss",['scss']);
+ 	 gulp.watch("src/modules/**/*.scss",['scss']);
  });
  
 // 看守
@@ -85,6 +88,7 @@ gulp.task('watch', function() {
  
   // 看守所有.scss档
   gulp.watch('src/styles/**/*.scss', ['css']);
+  gulp.watch('src/modules/**/*.scss', ['css']);
  
   // 看守所有.js档
   gulp.watch('src/scripts/**/*.js', ['js']);

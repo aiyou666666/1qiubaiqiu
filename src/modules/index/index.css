@@ -1,0 +1,39 @@
+.head {
+  font-size: 20px; }
+
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+------------------------------------------------------------- */
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 16px; } }
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  html {
+    font-size: 20px; } }
+
+@media only screen and (min-width: 376px) and (max-width: 450px) {
+  html {
+    font-size: 24px; } }
+
+@media only screen and (min-width: 451px) and (max-width: 525px) {
+  html {
+    font-size: 28px; } }
+
+@media only screen and (min-width: 526px) and (max-width: 600px) {
+  html {
+    font-size: 32px; } }
+
+@media only screen and (min-width: 601px) and (max-width: 675px) {
+  html {
+    font-size: 36px; } }

@@ -322,7 +322,7 @@
 
     // Get the value of an attribute.
     get: function(attr) {
-      return this.attributes[attr];
+      return this.attributes[attr] || this.attributes || '' ;
     },
 
     // Get the HTML-escaped value of an attribute.
@@ -471,6 +471,7 @@
       var model = this;
       var success = options.success;
       options.success = function(resp) {
+      	
         if (!model.set(model.parse(resp, options), options)) return false;
         if (success) success(model, resp, options);
         model.trigger('sync', model, resp, options);

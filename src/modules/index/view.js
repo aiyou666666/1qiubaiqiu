@@ -6,23 +6,24 @@ define([
 	"handlebars",
 	"utils",
 	"validate",
+	"modulesPath/index/model",
 	"text!modulesPath/index/index.css"
 	],
-	function (tpl,handlebars,utils,validata,style) {
-
+	function (tpl,handlebars,utils,validata,model,style) {
     var view = Backbone.View.extend({
         el: '#container',
-        
+        model:model, 
         initialize: function () {
         	//创建样式
         	this.style=style;
         	utils.createInlineStyle.call(this);
         },
-        render: function (name) {
+        render: function (data) {
+          var data=this.model.get();
           this.tpl=handlebars.compile(tpl)
-           this.$el.html(this.tpl({title:"首页"}));
+          this.$el.html(this.tpl(data));
         }
     });
-
+    
     return view;
 });

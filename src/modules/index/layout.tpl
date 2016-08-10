@@ -3,9 +3,16 @@
 	<div id="index">	
       <ul>
       {{#each list}}	
-	    <li>{{this}}</li>
+	    <li><span>{{@index}}</span> {{this}}</li>
 	  {{/each}}	  
      </ul>
     </div>
 </div>
-<div class="footer"></div>
+<div class="footer">
+   <div class="">
+   	
+   </div>
+   <div class="">
+   	
+   </div>
+</div>

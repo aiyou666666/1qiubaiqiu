@@ -1,1 +1,10 @@
 @import "../../scss/header.scss";
+#index{
+    padding: 0 .3rem;
+    text-align: justify;
+    li{
+        line-height:2;
+        margin: .5rem 0;
+    }
+    
+}

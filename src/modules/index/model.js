@@ -11,7 +11,7 @@ define(["backbone"], function(backbone) {
 		getdata: function() {
 			this.fetch({
 				error: function(error) {
-					console.log(error);
+					console.log("数据出错");
 				}
 			});
 

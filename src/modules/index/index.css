@@ -269,7 +269,8 @@ option {
   left: 0;
   top: 1rem;
   bottom: 1rem;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 .footer {
   left: 0;
@@ -278,3 +279,10 @@ option {
   right: 0;
   position: absolute;
   height: 1rem; }
+
+#index {
+  padding: 0 .3rem;
+  text-align: justify; }
+  #index li {
+    line-height: 2;
+    margin: .5rem 0; }

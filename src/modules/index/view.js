@@ -3,19 +3,24 @@
  */
 define([
 	'text!modulesPath/index/layout.tpl',
-	"src/js/handlebars",
-	"src/js/common/utils",
-	"src/js/common/validate",
+	"handlebars",
+	"utils",
+	"validate",
 	"text!modulesPath/index/index.css"
 	],
 	function (tpl,handlebars,utils,validata,style) {
 
     var view = Backbone.View.extend({
         el: '#container',
+        
         initialize: function () {
+        	//创建样式
+        	this.style=style;
+        	utils.createInlineStyle.call(this);
         },
         render: function (name) {
-            this.$el.html(_.template(tpl, {name: name}));
+          this.tpl=handlebars.compile(tpl)
+           this.$el.html(this.tpl({title:"首页"}));
         }
     });
 

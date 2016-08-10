@@ -28,11 +28,12 @@ define([],function(){
 		  	 }
 		  }	
 			return strre+"..."
-        }
-		
-		
-		
-		
-	}
+       },
+    createInlineStyle:function(){
+               var style=this.style;
+               var style_id=this.cid;
+               $('head').append($('<style id="style_' + style_id + '" class="page-style">' + style + '</style>'))
+    }
+  }
 	return utils;
 });

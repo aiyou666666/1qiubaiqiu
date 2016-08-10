@@ -21,6 +21,7 @@
             backbone: 'src/js/backbone',
             text: 'src/js/text',//用于requirejs导入html类型的依赖
             handlebars:'src/js/handlebars',
+            baceview:'src/js/baseview',
             stylePath: project + '/css',
             modulesPath:project+"src/modules/",
             utils:project+"src/js/common/utils",
@@ -34,7 +35,7 @@
                 exports: '$'
             },
             'zepto': {
-                exports: '$'
+                exports: '$$'
             },
             'backbone': {
                 deps: ['underscore', 'jquery'],

@@ -10,6 +10,10 @@ define(["backbone"], function(backbone) {
 		},
 		getdata: function() {
 			this.fetch({
+				success:function(model,val){
+					console.log(val);
+					
+				},
 				error: function(error) {
 					console.log("数据出错");
 				}

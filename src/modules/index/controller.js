@@ -4,6 +4,8 @@
 define(['modulesPath/index/view'], function (View) {
    return function(){
     	  var view = new View();
-    	  view.listenTo(view.model,"change",view.render);
+    	  view.listenTo(view.model,"change",function(){
+    	  	 view.render();
+    	  });
     };
 });

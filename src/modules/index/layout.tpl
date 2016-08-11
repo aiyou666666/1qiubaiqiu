@@ -8,11 +8,7 @@
      </ul>
     </div>
 </div>
-<div class="footer">
-   <div class="">
-   	
-   </div>
-   <div class="">
-   	
-   </div>
+<div class="footer flex-box">
+   <div class="flex-item js-bottom"><a href="#index" class="rightBorder">今日一糗</a></div>
+   <div class="flex-item js-bottom"><a href="#publish">发表糗事 </a></div>
 </div>

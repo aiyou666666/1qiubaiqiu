@@ -96,3 +96,19 @@ $w: 750;
   @include margin-bottom($bottom);
   @include margin-left($left);
 }
+@mixin flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-item($item) {
+    -webkit-box-flex: $item;
+    -moz-box-flex: $item;
+    -webkit-flex: $item;
+    -ms-flex: $item;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
